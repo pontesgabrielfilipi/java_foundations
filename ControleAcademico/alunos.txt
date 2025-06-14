@@ -1,0 +1,4 @@
+name, address, age, registrationNumer
+Gabriel,sla,16,1
+name, address, age, registrationNumer
+Pedro,sla2,17,2
