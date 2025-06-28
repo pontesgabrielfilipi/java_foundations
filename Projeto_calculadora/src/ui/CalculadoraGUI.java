@@ -100,19 +100,19 @@ public class CalculadoraGUI extends JFrame implements ActionListener {
         } else if (comando.equals("⌫")) {
             String textoAtual = campoTexto.getText();
             if (mostrandoOperador){
-                campoTexto.setText("0");
+                campoTexto.setText(formataNumero(primeiroNumero));
                 mostrandoOperador = false;
                 novoNumero = true;
             } else if (textoAtual.length() > 1) {
                 campoTexto.setText(textoAtual.substring(0, textoAtual.length()-1));
             } else {
                 campoTexto.setText("0");
+                novoNumero = true;
             }
-
         }else if (comando.equals("=")){
             double segundoNumero = Double.parseDouble(campoTexto.getText());
             double resultado = CalculadoraController.Calcular(primeiroNumero, segundoNumero, operador, this);
-            campoTexto.setText(String.valueOf(resultado));
+            campoTexto.setText(formataNumero(resultado));
             operador = null;
             novoNumero = true;
             mostrandoOperador = false;
@@ -123,5 +123,11 @@ public class CalculadoraGUI extends JFrame implements ActionListener {
             novoNumero = true;
             mostrandoOperador = true;
         }
+    }
+    private String formataNumero(double numero) {
+    if (numero == (long) numero)
+        return String.format("%d", (long) numero);
+    else
+        return String.valueOf(numero);
     }
 }
