@@ -62,10 +62,11 @@ public class CadastroAlunoGUI {
         // Data percistence with .txt file
 
         File arquivoAlunos = new File("alunos.txt");
+        boolean arquivoAlunosExiste = arquivoAlunos.exists();
         try (FileWriter fw = new FileWriter(arquivoAlunos, true)) {
             PrintWriter pw = new PrintWriter(fw);
             
-            if (!arquivoAlunos.exists()) {
+            if (!arquivoAlunosExiste) {
                 pw.println("name, address, age, registrationNumer");
             }
 

@@ -1,6 +1,7 @@
 package main;
 
 import ui.CadastroAlunoGUI;
+import ui.CadastroProfessorGUI;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -8,7 +9,8 @@ public class App {
         // JOptionPane.showMessageDialog(null, aluno, null, 0);
 
         //Code
-        CadastroAlunoGUI.executar();
+        // CadastroAlunoGUI.executar();
+        CadastroProfessorGUI.executar();
         
     }
 }
