@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Random;
+
 public class Professor {
     private String name;
     private String address;
@@ -13,11 +15,11 @@ public class Professor {
     public Professor() {
     }
 
-    public Professor(String name, String address, int age, int registrationNumber, String cPF, String acting) {
+    public Professor(String name, String address, int age, String cPF, String acting) {
         this.name = name;
         this.address = address;
         this.age = age;
-        this.registrationNumber = registrationNumber;
+        this.registrationNumber = this.generateRegistrationNumber();
         CPF = cPF;
         this.acting = acting;
     }
@@ -34,36 +36,49 @@ public class Professor {
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }
+
     public String getAddress() {
         return address;
     }
+
     public void setAddress(String address) {
         this.address = address;
     }
+
     public int getAge() {
         return age;
     }
+
     public void setAge(int age) {
         this.age = age;
     }
+
     public int getRegistrationNumber() {
         return registrationNumber;
     }
-    public void setRegistrationNumber(int registrationNumber) {
-        this.registrationNumber = registrationNumber;
+
+    public int generateRegistrationNumber() {
+        Random rand = new Random();
+        int RN = rand.nextInt(9999) + 1;
+        return RN;
     }
+
     public String getCPF() {
         return CPF;
     }
+
     public void setCPF(String cPF) {
         CPF = cPF;
     }
+
     public String getActing() {
         return acting;
     }
+
     public void setActing(String acting) {
         this.acting = acting;
     }

@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Random;
+
 public class Aluno {
     private String name;
     private String address;
@@ -8,11 +10,11 @@ public class Aluno {
 
     // Cunstructors
 
-    public Aluno(String name, String address, int age, int registrationNumber) {
+    public Aluno(String name, String address, int age) {
         this.name = name;
         this.address = address;
         this.age = age;
-        this.registrationNumber = registrationNumber;
+        this.registrationNumber = this.generateRegistrationNumber();
     }
 
     public Aluno() {
@@ -48,8 +50,10 @@ public class Aluno {
         return registrationNumber;
     }
 
-    public void setRegistrationNumber(int registrationNumber) {
-        this.registrationNumber = registrationNumber;
+    public int generateRegistrationNumber() {
+        Random rand = new Random();
+        int RN = rand.nextInt(9999) + 1;
+        return RN;
     }
 
     // Methods and Functions
@@ -61,7 +65,8 @@ public class Aluno {
     }
 
     public void visualizar() {
-        System.out.println("name=" + name + "\nAddress=" + address + "\nage=" + age + "\nregistrationNumber=" + registrationNumber); 
+        System.out.println("name=" + name + "\nAddress=" + address + "\nage=" + age + "\nregistrationNumber="
+                + registrationNumber);
 
         /**
          * ou

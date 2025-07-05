@@ -1,3 +1,2 @@
 name, address, age, registrationNumer
-gabriel,sla 123,16,1
-aluno 2,rua 12,0,2
+Gabriel,Rua do Sei la,16,1
