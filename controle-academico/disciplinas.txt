@@ -1,2 +1,0 @@
-id,nome,categoria,duracao
-5118,Java,TI,40

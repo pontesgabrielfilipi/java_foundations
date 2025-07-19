@@ -1,2 +1,0 @@
-name, address, age, registrationNumer, cpf, acting
-Paulo,Rua do Sei la,35,1,111,TI
