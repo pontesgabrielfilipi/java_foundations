@@ -1,13 +1,7 @@
 package model;
 
-import java.util.Random;
-
-public class Professor {
-    private String name;
-    private String address;
-    private int age;
-    private int registrationNumber;
-    private String CPF;
+public class Professor extends Pessoa{
+    private String cpf;
     private String acting;
 
     // Constructors
@@ -15,64 +9,20 @@ public class Professor {
     public Professor() {
     }
 
-    public Professor(String name, String address, int age, String cPF, String acting) {
-        this.name = name;
-        this.address = address;
-        this.age = age;
-        this.registrationNumber = this.generateRegistrationNumber();
-        CPF = cPF;
+    public Professor(String name, Endereco address, int age, String cpf, String acting) {
+        super(name, address, age);
+        this.cpf = cpf;
         this.acting = acting;
     }
 
-    // To String Method
-
-    @Override
-    public String toString() {
-        return "Professor [name=" + name + ", address=" + address + ", age=" + age + ", registrationNumber="
-                + registrationNumber + ", CPF=" + CPF + ", acting=" + acting + "]";
-    }
-
     // Gets and Sets
-    public String getName() {
-        return name;
+
+    public String getCpf() {
+        return cpf;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public int getRegistrationNumber() {
-        return registrationNumber;
-    }
-
-    public int generateRegistrationNumber() {
-        Random rand = new Random();
-        int RN = rand.nextInt(9999) + 1;
-        return RN;
-    }
-
-    public String getCPF() {
-        return CPF;
-    }
-
-    public void setCPF(String cPF) {
-        CPF = cPF;
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 
     public String getActing() {
@@ -83,8 +33,10 @@ public class Professor {
         this.acting = acting;
     }
 
-    public void setRegistrationNumber(int registrationNumber) {
-        this.registrationNumber = registrationNumber;
+    @Override
+    public String toString() {
+        return "Professor [cpf=" + cpf + ", acting=" + acting + "]"+ ", " + super.toString();
     }
     
+
 }

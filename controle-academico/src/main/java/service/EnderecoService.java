@@ -7,8 +7,6 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 
 import model.Endereco;
 
@@ -33,9 +31,9 @@ public class EnderecoService {
                 request, HttpResponse.BodyHandlers.ofString());
 
         // Capturar o erro caso ele ocorra
-        JsonObject json = JsonParser
-                .parseString(response.body())
-                .getAsJsonObject();
+        // JsonObject json = JsonParser
+        //         .parseString(response.body())
+        //         .getAsJsonObject();
 
 
         Gson gson = new Gson();

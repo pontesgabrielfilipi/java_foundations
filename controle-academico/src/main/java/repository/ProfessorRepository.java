@@ -30,7 +30,7 @@ public class ProfessorRepository {
                 professor.getAddress(),
                 professor.getAge(),
                 professor.getRegistrationNumber(),
-                professor.getCPF(),
+                professor.getCpf(),
                 professor.getActing()
             );
         } catch (IOException e) {

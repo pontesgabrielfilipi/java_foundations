@@ -2,6 +2,7 @@ package view;
 
 import javax.swing.JOptionPane;
 
+import model.Endereco;
 import model.Professor;
 import repository.ProfessorRepository;
 
@@ -16,9 +17,13 @@ public class ProfessorView {
                 String name = JOptionPane.showInputDialog(null, "Insira o nome do Professor: ", "Insira o Nome",
                                 JOptionPane.QUESTION_MESSAGE);
 
-                String address = JOptionPane.showInputDialog(null, "Insira o endereço do Professor: ",
-                                "Insira o Endereço",
-                                JOptionPane.QUESTION_MESSAGE);
+                Endereco address = new Endereco(
+                                JOptionPane.showInputDialog(null, "Digite o CEP do Aluno (8 digitos e sem -): ", "CEP",
+                                                JOptionPane.QUESTION_MESSAGE),
+                                JOptionPane.showInputDialog(null, "Digite o número da casa do Aluno: ",
+                                                "Número da Casa", JOptionPane.QUESTION_MESSAGE),
+                                JOptionPane.showInputDialog(null, "Digite o complemento do endereço do Aluno: ",
+                                                "Complemento do Endereço", JOptionPane.QUESTION_MESSAGE));
 
                 int age = 0;
                 do {

@@ -31,8 +31,8 @@ public class AlunoTest {
         aluno.setName("Pedro");
         aluno.setAddress(endereco);
         aluno.setAge(29);
-        int registrationNumber = aluno.generateRegistrationNumber();
-        aluno.setRegistrationNumber(registrationNumber);
+        // int registrationNumber = aluno.generateRegistrationNumber();
+        // aluno.setRegistrationNumber(registrationNumber);
         // aluno.setRegistrationNumber(aluno.generateRegistrationNumber());
 
         assertEquals("Pedro", aluno.getName());
