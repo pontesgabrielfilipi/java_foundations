@@ -12,7 +12,12 @@ import model.Endereco;
 
 public class EnderecoService {
     public static void completarEnderecoViaCep(Endereco endereco) throws IOException, InterruptedException {
-        String cepLimpo = endereco.getCep().replace("-", "");
+        String cep = endereco.getCep();
+        if (cep == null) {
+            throw new IllegalArgumentException("Formato de CEP inválido");
+        }
+
+        String cepLimpo = cep.replace("-", "");
         
         if (!isValid(cepLimpo)) {
             throw new IllegalArgumentException("Formato de CEP inválido");

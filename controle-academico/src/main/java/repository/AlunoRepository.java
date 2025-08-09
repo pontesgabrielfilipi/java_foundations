@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 
 import interfaces.RepositoryInterface;
 import model.Aluno;
@@ -15,8 +16,36 @@ public class AlunoRepository implements RepositoryInterface{
     // Criando a constante ARQUIVO_TXT que recebe o nome do arquivo manipulado
     // Creating the constant ARQIVO_TXT that recives the name of the manipulated file
 
-    private static final String ARQUIVO_TXT = "alunos.txt";
-    private static final String ARQUIVO_CSV = "alunos.csv";
+    private static String ARQUIVO_TXT = "alunos.txt";
+    private static String ARQUIVO_CSV = "alunos.csv";
+
+    // Exemplo de Array fixo
+    // Fixed Array exemple
+
+    private static Aluno[] alunosArray = new Aluno[5];
+    private static int contadorArray = 0;
+
+    // Exemplo de Array dinâmico
+
+    private static ArrayList<Aluno> alunosArrayList = new ArrayList<>();
+
+    // Adicionar Alunos usando Array fixo
+    public static void setAlunos(Aluno aluno) {
+        if (contadorArray < alunosArray.length) {
+            alunosArray[contadorArray] = aluno;
+            contadorArray++;
+        }else{
+            System.err.println("Arquivo Cheio!");
+        }
+    }
+
+    // Adicionar Alunos usando Array Dinâmico
+    public static void setAlunoArrayList(Aluno aluno) {
+        alunosArrayList.add(aluno);
+    }
+    public static ArrayList<Aluno> getList() {
+        return alunosArrayList;
+    }
 
     // Metodo de salvar
     // Save method
