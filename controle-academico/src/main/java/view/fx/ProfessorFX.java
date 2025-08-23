@@ -44,25 +44,31 @@ public class ProfessorFX {
         atuacaoField.setPrefWidth(300);
         atuacaoField.setPrefHeight(40);
 
+        // Autocomplemento
+        
         TextField logradouroField = new TextField();
-        logradouroField.setPromptText("");
+        logradouroField.setPromptText("Logradouro: ");
         logradouroField.setPrefWidth(300);
         logradouroField.setPrefHeight(40);
+
         TextField bairroField = new TextField();
-        bairroField.setPromptText("");
+        bairroField.setPromptText("Bairro: ");
         bairroField.setPrefWidth(300);
         bairroField.setPrefHeight(40);
-        TextField localidadeField = new TextField();
-        localidadeField.setPromptText("");
-        localidadeField.setPrefWidth(300);
-        localidadeField.setPrefHeight(40);
-        TextField ufField = new TextField();
-        ufField.setPromptText("");
+
+        TextField cidadeField = new TextField();
+        cidadeField.setPromptText("Localidade: ");
+        cidadeField.setPrefWidth(300);
+        cidadeField.setPrefHeight(40);
+
+        TextField ufField = new TextField(); // unidade federativa = estado
+        ufField.setPromptText("UF: ");
         ufField.setPrefWidth(300);
         ufField.setPrefHeight(40);
 
-        Button btnCadastrar = new Button("Cadastrar");
+
         Label lblMensage = new Label();
+        Button btnCadastrar = new Button("Cadastrar");
 
         GridPane form = new GridPane();
         form.setPadding(new Insets(10));
@@ -89,7 +95,7 @@ public class ProfessorFX {
         form.add(new Label("Bairro: "), 0, 10);
         form.add(bairroField, 1, 10);
         form.add(new Label("Localidade: "), 0, 11);
-        form.add(localidadeField, 1, 11);
+        form.add(cidadeField, 1, 11);
         form.add(new Label("UF: "), 0, 12);
         form.add(ufField, 1, 12);
 
